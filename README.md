@@ -8,7 +8,7 @@ I built this while taking [LangChain Academy's *Introduction to LangGraph*](http
 
 ## Architecture
 
-> *Replace this block with the PNG exported from the notebook's graph visualization cell (`graph.get_graph().draw_mermaid_png()`).*
+<img width="377" height="432" alt="image" src="https://github.com/user-attachments/assets/222c32b3-d72e-4411-91fc-ac9eb4a1e5b8" />
 
 ```
 START
