@@ -59,23 +59,23 @@ The harness produces a markdown memo like this:
 
 | Model | Status | Latency (s) | Out tokens | Cost / 1k runs (USD) | Quality |
 |---|---|---|---|---|---|
-| `gpt-5.4-nano` | ✅ | 3.75 | 125 | 0.1636 | 8/10 |
-| `gpt-5.4-mini` | ✅ | 3.60 | 129 | 0.6082 | 9/10 |
-| `gpt-5.4`      | ✅ | 5.25 | 119 | 1.8775 | 10/10 |
+| `gpt-5.4-nano` | ✅ | 2.85 | 127 | 0.1661 | 8/10 |
+| `gpt-5.4-mini` | ✅ | 2.55 | 137 | 0.6442 | 9/10 |
+| `gpt-5.4`      | ✅ | 5.76 | 117 | 1.8475 | 9/10 |
 
 #### Quality Rationale
 
 - **`gpt-5.4-nano`** (8/10): Accurate and clear, but slightly generic and less explicit about emerging-market constraints and the specific role of intermediary banks in correspondent settlement.
 - **`gpt-5.4-mini`** (9/10): Well-balanced and precise, covering currency conversion, FX spreads, and intermediary banks with good clarity and relevant emerging-market context.
-- **`gpt-5.4`** (10/10): Fully addresses the prompt in exactly three sentences with accurate explanation of conversion mechanics, FX spreads, and the role of intermediary banks in cross-border emerging-market payments.
+- **`gpt-5.4`** (9/10): Fully addresses the prompt in exactly three sentences with accurate explanation of conversion mechanics, FX spreads, and the role of intermediary banks in cross-border emerging-market payments.
 
 #### Recommendation
 
-**Adopt:** `gpt-5.4`
+**Adopt:** `gpt-5.4-mini`
 
-- Quality: 10/10
-- Latency: 5.25s
-- Cost: USD 1.8775 per 1k runs
+- Quality: 9/10
+- Latency: 2.55s
+- Cost: USD 0.6442 per <272k tokens
 
 *Recommendation rule: highest quality score; ties broken by lowest cost.*
 
