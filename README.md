@@ -60,7 +60,7 @@ The harness produces a markdown memo like this:
 
 #### Comparison Table
 
-| Model | Status | Latency (s) | Out tokens | Cost / 1k runs (USD) | Quality |
+| Model | Status | Latency (s) | Out tokens | Cost / <272k tokens runs (USD) | Quality |
 |---|---|---|---|---|---|
 | `gpt-5.4-nano` | ✅ | 2.85 | 127 | 0.1661 | 8/10 |
 | `gpt-5.4-mini` | ✅ | 2.55 | 137 | 0.6442 | 9/10 |
@@ -68,9 +68,9 @@ The harness produces a markdown memo like this:
 
 #### Quality Rationale
 
-- **`gpt-5.4-nano`** (8/10): Accurate and clear, but slightly generic and less explicit about emerging-market constraints and the specific role of intermediary banks in correspondent settlement.
-- **`gpt-5.4-mini`** (9/10): Well-balanced and precise, covering currency conversion, FX spreads, and intermediary banks with good clarity and relevant emerging-market context.
-- **`gpt-5.4`** (9/10): Fully addresses the prompt in exactly three sentences with accurate explanation of conversion mechanics, FX spreads, and the role of intermediary banks in cross-border emerging-market payments.
+- **`gpt-5.4-nano`** (8/10): Accurate and complete overall, with clear mention of FX spreads and intermediary banks, though it is slightly more generic and less focused on emerging-market specifics than ideal.
+- **`gpt-5.4-mini`** (9/10): Very clear and accurate, directly explains currency conversion, FX spread mechanics, and the role of intermediary banks while tying them to emerging-market costs and frictions.
+- **`gpt-5.4`** (9/10): Strong, concise, and accurate explanation that covers conversion methods, FX spreads, and intermediary banks; it is slightly less explicit about distributed systems than the best answer but still excellent.
 
 #### Recommendation
 
