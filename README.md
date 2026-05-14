@@ -54,7 +54,7 @@ The harness produces a markdown memo like this:
 
 ---
 
-### Decision Memo — LLM Evaluation
+### Decision Report — LLM Evaluation
 
 **Task evaluated:** *(as above)*
 
