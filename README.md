@@ -1,6 +1,6 @@
 # LLM Evaluation Harness — LangGraph PoC
 
-A multi-node state graph that benchmarks generative models in parallel, captures quality, latency, tokens and cost, and produces a structured decision memo with an adopt, watch, or avoid recommendation.
+A multi-node state graph that benchmarks generative models in parallel, captures quality, latency, tokens and cost, and produces a structured decision report with an adopt, watch, or avoid recommendation.
 
 I built this while taking [LangChain Academy's *Introduction to LangGraph*](https://academy.langchain.com/), to practice the framework on a real problem: when an applied AI team picks a model for a task, the answer is always a trade-off across quality, latency, and cost. This harness automates the comparison.
 
@@ -62,29 +62,29 @@ The harness produces a markdown memo like this:
 
 | Model | Status | Latency (s) | Out tokens | Cost / <272k tokens runs (USD) | Quality |
 |---|---|---|---|---|---|
-| `gpt-5.4-nano` | ✅ | 2.85 | 127 | 0.1661 | 8/10 |
-| `gpt-5.4-mini` | ✅ | 2.55 | 137 | 0.6442 | 9/10 |
-| `gpt-5.4`      | ✅ | 5.76 | 117 | 1.8475 | 9/10 |
+| `gpt-5.4-nano` | ✅ | 2.43 | 128 | 0.1674 | 9/10 |
+| `gpt-5.4-mini` | ✅ | 2.65 | 126 | 0.5948 | 8/10 |
+| `gpt-5.4`      | ✅ | 4.80 | 122 | 1.9225 | 9/10 |
 
 #### Quality Rationale
 
-- **`gpt-5.4-nano`** (8/10): Accurate and complete overall, with clear mention of FX spreads and intermediary banks, though it is slightly more generic and less focused on emerging-market specifics than ideal.
-- **`gpt-5.4-mini`** (9/10): Very clear and accurate, directly explains currency conversion, FX spread mechanics, and the role of intermediary banks while tying them to emerging-market costs and frictions.
-- **`gpt-5.4`** (9/10): Strong, concise, and accurate explanation that covers conversion methods, FX spreads, and intermediary banks; it is slightly less explicit about distributed systems than the best answer but still excellent.
+- **`gpt-5.4-nano`** (9/10): Accurate, complete, and clear, with a strong explanation of FX conversion, spreads, and intermediary banks; only slightly more detailed than necessary.
+- **`gpt-5.4-mini`** (8/10): Mostly accurate and clear, but a bit less precise about how conversion occurs in distributed systems and less explicit about the mechanics of intermediary banks.
+- **`gpt-5.4`** (9/10): Very accurate and complete for emerging markets, clearly covering routing, FX spreads, and intermediary banks, though it is slightly more verbose than required.
 
 #### Recommendation
 
-**Adopt:** `gpt-5.4-mini`
+**Adopt:** `gpt-5.4-nano`
 
 - Quality: 9/10
-- Latency: 2.55s
-- Cost: USD 0.6442 per <272k tokens
+- Latency: 2.43s
+- Cost: USD 0.1674 per <272k tokens
 
 *Recommendation rule: highest quality score; ties broken by lowest cost.*
 
 ---
 
-*(Numbers above come from one real run against OpenAI's API. They vary per run and per pricing snapshot. A practical operator would often prefer `gpt-5.4-mini` here, since the quality gap is small and the cost is roughly 3× lower.)*
+*(Numbers above come from one real run against OpenAI's API. They vary per run and per pricing snapshot. A practical operator would often prefer `gpt-5.4-nano` here, since the quality gap is small and the cost is roughly 3× lower.)*
 
 ---
 
